@@ -98,6 +98,11 @@ action :tag do
   end
 end
 
+action :retag do
+  retag
+  new_resource.updated_by_last_action(true)
+end
+
 def build
   full_image_name = new_resource.image_name
   full_image_name += ":#{new_resource.tag}" if new_resource.tag
@@ -261,4 +266,8 @@ def tag
     'force' => new_resource.force
   )
   docker_cmd!("tag #{tag_args} #{new_resource.image_name} #{repository_and_tag_args}")
+end
+
+def retag
+  docker_cmd!("tag -f #{registry_image_and_tag_arg} #{new_resource.image_name}")
 end

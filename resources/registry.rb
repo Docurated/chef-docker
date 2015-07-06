@@ -1,4 +1,4 @@
-actions :login
+actions [:login, :forcelogin]
 
 default_action :login
 

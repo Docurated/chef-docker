@@ -1,4 +1,4 @@
-actions :build, :build_if_missing, :import, :insert, :load, :pull, :pull_if_missing, :push, :remove, :save, :tag
+actions :build, :build_if_missing, :import, :insert, :load, :pull, :pull_if_missing, :push, :remove, :save, :tag, :retag
 
 default_action :pull
 
@@ -25,3 +25,4 @@ attribute :rm, :kind_of => [TrueClass, FalseClass]
 attribute :source, :kind_of => [String]
 attribute :tag, :kind_of => [String]
 attribute :virtual_size, :kind_of => [String]
+attribute :retag, :kind_of => [String]

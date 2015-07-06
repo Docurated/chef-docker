@@ -20,6 +20,11 @@ action :login do
   end
 end
 
+action :forcelogin do
+  login
+  new_resource.updated_by_last_action(true)
+end
+
 def command_timeout_error_message(cmd)
   <<-EOM
 
