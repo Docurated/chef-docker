@@ -25,4 +25,4 @@ attribute :rm, kind_of: [TrueClass, FalseClass]
 attribute :source, kind_of: String
 attribute :tag, kind_of: String
 attribute :virtual_size, kind_of: String
-attribute :retag, :kind_of: String
+attribute :retag, kind_of: String
